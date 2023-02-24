@@ -23,21 +23,21 @@ public class Wine {
     private Long id;
     private String name;
     private int year;
-    private String winemaker;
     private float price;
     private Date dayOfPurchase;
     private int number;
     private BottleType bottle;
     private Type type;
+
     @ManyToMany
     @EqualsAndHashCode.Exclude
     private List<Variety> varieties = new ArrayList<>();
-
     @ManyToOne
     private Area area;
-
     @OneToMany
     private List<StorageLocation> locations = new ArrayList<>();
 
+    @ManyToOne
+    private WineMaker wineMaker;
 
 }
