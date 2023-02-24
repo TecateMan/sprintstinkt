@@ -36,4 +36,8 @@ public class Wine {
     @ManyToOne
     private Area area;
 
+    @OneToMany
+    private List<StorageLocation> locations = new ArrayList<>();
+
+
 }
