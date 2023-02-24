@@ -1,6 +1,7 @@
 package de.basoso.wine.entity.model;
 
 import de.basoso.wine.entity.data.BottleType;
+import de.basoso.wine.entity.data.Country;
 import de.basoso.wine.entity.data.Type;
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,6 +29,7 @@ public class Wine {
     private int number;
     private BottleType bottle;
     private Type type;
+    private Country country;
 
     @ManyToMany
     @EqualsAndHashCode.Exclude
