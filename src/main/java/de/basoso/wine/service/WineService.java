@@ -32,6 +32,8 @@ public class WineService {
             throw new ResourceNotFoundException("Wine not found!");
         }
         Wine w = optWine.get();
+        // TODO Logik für Update einbauen
+
         return wineRepository.save(w);
     }
 
