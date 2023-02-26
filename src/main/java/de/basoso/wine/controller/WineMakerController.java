@@ -1,10 +1,8 @@
 package de.basoso.wine.controller;
 
 import de.basoso.wine.entity.form.WineMakerForm;
-import de.basoso.wine.entity.model.Wine;
 import de.basoso.wine.entity.model.WineMaker;
 import de.basoso.wine.service.WineMakerService;
-import de.basoso.wine.service.WineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +15,6 @@ public class WineMakerController {
 
     @Autowired
     WineMakerService wineMakerService;
-
-    @Autowired
-    WineService wineService;
 
     @PostMapping
     public ResponseEntity<WineMaker> createWineMaker(WineMakerForm wineMakerForm) {
