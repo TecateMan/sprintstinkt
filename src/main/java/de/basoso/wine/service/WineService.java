@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +40,16 @@ public class WineService {
         // TODO Logik für Update einbauen
 
         return wineRepository.save(w);
+    }
+
+    public void deleteWine(String name) {
+        Optional<Wine> optionalWine = findByName(name);
+
+        if(!optionalWine.isPresent()){
+            throw new ResourceNotFoundException("Wine not found!");
+        }
+        Wine w = optionalWine.get();
+        wineRepository.deleteById(w.getId());
     }
 
     public Optional<Wine> findById(Long id) {

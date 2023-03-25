@@ -3,7 +3,6 @@ package de.basoso.wine.controller;
 import de.basoso.wine.entity.form.WineForm;
 import de.basoso.wine.entity.form.WineMakerForm;
 import de.basoso.wine.entity.model.Wine;
-import de.basoso.wine.entity.model.WineMaker;
 import de.basoso.wine.service.WineMakerService;
 import de.basoso.wine.service.WineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +42,11 @@ public class WineController {
         // TODO Liste?
         // ResponseEntity ist eine Liste oder Array
         return ResponseEntity.ok((Wine) wineService.findWinesByWinemaker(wineMakerForm));
+    }
+
+    @DeleteMapping
+    public void deleteWine(WineForm wineForm) {
+        wineService.deleteWine(wineForm.getName());
     }
 
 }
