@@ -1,6 +1,9 @@
 package de.basoso.wine.entity.form;
 
 import de.basoso.wine.entity.data.BottleType;
+import de.basoso.wine.entity.data.Country;
+import de.basoso.wine.entity.data.Type;
+import de.basoso.wine.entity.model.Area;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,4 +21,7 @@ public class WineForm {
     private Date dayOfPurchase;
     private int number;
     private BottleType bottle;
+    private Country country;
+    private Area area;
+    private Type type;
 }

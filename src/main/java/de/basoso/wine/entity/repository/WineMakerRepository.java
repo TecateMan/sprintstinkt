@@ -10,4 +10,7 @@ import java.util.Optional;
 
 public interface WineMakerRepository extends CrudRepository<WineMaker, Long> {
      Optional<WineMaker> findByName(@Param("name") String name);
+
+     @Override
+     List<WineMaker> findAll();
 }

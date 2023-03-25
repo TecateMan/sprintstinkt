@@ -38,12 +38,12 @@ public class WineController {
         return optWine.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-   @GetMapping(path = "/wines")
+   @GetMapping(path = "/winebymaker")
     public ResponseEntity<List<Wine>> getWinesByWinemaker(@RequestBody WineMakerForm wineMakerForm) {
         return ResponseEntity.ok(wineService.findWinesByWinemaker(wineMakerForm));
     }
 
-    @GetMapping(path = "/allwines")
+    @GetMapping(path = "/wines")
     public ResponseEntity<List<Wine>> getAllWines() {
         return ResponseEntity.ok(wineService.findAllWines());
     }
@@ -52,7 +52,4 @@ public class WineController {
     public void deleteWine(WineForm wineForm) {
         wineService.deleteWine(wineForm.getName());
     }
-
-
-
 }

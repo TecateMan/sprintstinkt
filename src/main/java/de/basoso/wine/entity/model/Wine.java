@@ -27,7 +27,6 @@ public class Wine {
     private float price;
     private Date dayOfPurchase;
     private int number;
-    private BottleType bottle;
     private Type type;
     private Country country;
 
@@ -36,9 +35,10 @@ public class Wine {
     private List<Variety> varieties = new ArrayList<>();
     @ManyToOne
     private Area area;
+    @ManyToOne
+    private BottleType bottle;
     @OneToMany
     private List<StorageLocation> locations = new ArrayList<>();
-
     @ManyToOne
     private WineMaker wineMaker;
 
