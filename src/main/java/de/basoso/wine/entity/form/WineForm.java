@@ -1,6 +1,6 @@
 package de.basoso.wine.entity.form;
 
-import de.basoso.wine.entity.data.BottleType;
+import de.basoso.wine.entity.model.BottleType;
 import de.basoso.wine.entity.data.Country;
 import de.basoso.wine.entity.data.Type;
 import de.basoso.wine.entity.model.Area;
