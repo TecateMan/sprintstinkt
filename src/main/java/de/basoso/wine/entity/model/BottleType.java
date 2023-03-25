@@ -1,4 +1,4 @@
-package de.basoso.wine.entity.data;
+package de.basoso.wine.entity.model;
 
 import de.basoso.wine.entity.model.Wine;
 import jakarta.persistence.*;
