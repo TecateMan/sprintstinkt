@@ -14,5 +14,6 @@ public interface WineRepository extends CrudRepository<Wine, Long> {
     List<Wine> findWinesByWineMaker(@Param("winemaker") String name);
 
     @Override
-    void deleteById(Long aLong);
+    List<Wine> findAll();
+
 }

@@ -39,8 +39,6 @@ public class WineMakerService {
         return wineMakerRepository.save(w);
     }
 
-
-
     public Optional<WineMaker> findByName(String name) { return wineMakerRepository.findByName(name);}
 
     public Optional<WineMaker> findById(long id) { return wineMakerRepository.findById(id);}

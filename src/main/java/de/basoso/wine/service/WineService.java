@@ -70,4 +70,8 @@ public class WineService {
 
         return listOfWines;
     }
+
+    public List<Wine> findAllWines() {
+        return wineRepository.findAll();
+    }
 }

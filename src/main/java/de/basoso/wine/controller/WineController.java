@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -38,15 +39,20 @@ public class WineController {
     }
 
    @GetMapping(path = "/wines")
-    public ResponseEntity<Wine> getWinesByWinemaker(@RequestBody WineMakerForm wineMakerForm) {
-        // TODO Liste?
-        // ResponseEntity ist eine Liste oder Array
-        return ResponseEntity.ok((Wine) wineService.findWinesByWinemaker(wineMakerForm));
+    public ResponseEntity<List<Wine>> getWinesByWinemaker(@RequestBody WineMakerForm wineMakerForm) {
+        return ResponseEntity.ok(wineService.findWinesByWinemaker(wineMakerForm));
+    }
+
+    @GetMapping(path = "/allwines")
+    public ResponseEntity<List<Wine>> getAllWines() {
+        return ResponseEntity.ok(wineService.findAllWines());
     }
 
     @DeleteMapping
     public void deleteWine(WineForm wineForm) {
         wineService.deleteWine(wineForm.getName());
     }
+
+
 
 }
